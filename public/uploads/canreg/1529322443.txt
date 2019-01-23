@@ -1,0 +1,11 @@
+<!DOCTYPE>
+<html>
+   <title>My first website</title>
+   <body>
+
+this is what i called love in my previous article
+src=""
+
+   </body>
+
+</html>

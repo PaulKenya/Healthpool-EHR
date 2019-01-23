@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+    <title>E.C.G Request Form</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <h1 class="text-center">KENYATTA NATIONAL HOSPITAL</h1>
+        <h2 class="text-center">E.C.G REQUEST FORM</h2>
+
+        <form>
+            <div class="form-row">
+                <div class="form-group col-md-9">
+                    <label for="">Patient Name</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="">Unit Number</label>
+                    <input type="number" class="form-control">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label for="">Age</label>
+                    <input type="number" class="form-control">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="">Sex</label>
+                    <select class="custom-select">
+                        <option>Sex...</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="">Ward Clinic</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="">Bed</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-1">
+                    <label for="">Previous E.C.G</label>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input">
+                        <label class="form-check-label">Yes</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input">
+                        <label class="form-check-label">No</label>
+                    </div>
+                </div>
+                <div class="form-group col-md-11">
+                    <label for="">Report to be sent to:</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="">Medication</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">Digoxin / Diuretics / Others</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio">
+                    <label class="form-check-label">Yes/No</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="">Relevant history and clinical findings and provisional diagnosis</label>
+                <textarea class="form-control"></textarea>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="">Date</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="">Signed</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="">Printed</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

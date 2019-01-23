@@ -1,0 +1,251 @@
+@extends('layouts.app')
+
+@section('content')
+    <div class="col-md-12">
+        <div class="card">
+            <div class="container">
+                <h2 class="text-center">REQUEST FOR BLOOD GROUPING AND TRANSFUSION</h2>
+                <p class="text-center">"Matched" blood will not be available until 24 hrs after receipt of specimen.</p>
+                <p class="text-center">Patient's blood (5ml. clotted) in a labelled bottle must accompany this form.</p>
+
+                <b><p>PART A- <i>To be completed by doctor in charge of case.</i></p></b>
+                <form>
+                    <div class="form-group">
+                        <label for="patients_name">Patient's name(BLOCK LETTERS)</label>
+                        <input type="text" class="form-control" id="patients_name" placeholder="">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-3">
+                            <label>IP/OP. No.</label>
+                            <input type="number" class="form-control">
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label>Sex</label>
+                            <select class="custom-select">
+                                <option selected>Sex...</option>
+                                <option value="1">Male</option>
+                                <option value="2">Female</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-1">
+                            <label>Age</label>
+                            <input type="number" class="form-control">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label>Ward</label>
+                            <input type="number" class="form-control">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label>Bed</label>
+                            <input type="number" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Reason for transfusion</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Consultant in charge(Name)</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Houseman(BLOCK LETTERS)</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="">Patient's Group</label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="">Rhesus</label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="">Hb</label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Date of previous transfusions</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Details of any reaction to transfusion</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+                    <hr>
+                    <b><p>DEGREE OF URGENCY.<i> Indicate thus</i></p></b>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" >
+                        <label class="form-check-label" >Desperate(Blood needed at once without matching).</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" >
+                        <label class="form-check-label" >Urgent(Blood needed after quick X-match).</label>
+                    </div>
+                    <small class="form-text text-muted">In these circumstances above the clinician bears responsibility.</small>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" >
+                        <label class="form-check-label" >Non-urgent</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" >
+                        <label class="form-check-label" >Reserve for operations</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" >
+                        <label class="form-check-label" >Group only.</label>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-11">
+                            <label for="">Number of pints required</label>
+                            <input type="number" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group col-md-1">
+                            <label for="">Packed?</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" >
+                                <label class="form-check-label" >Yes</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" >
+                                <label class="form-check-label" >No</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Date and time required</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="">Name</label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="">Signature</label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="">Date</label>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>
+                    </div>
+                </form>
+
+                <hr>
+                <b><p>PART B-<i>to be completed by the laboratory</i></p></b>
+                <form>
+                    <div class="form-group">
+                        <p>Specimen received by:</p>
+                        <div class="form-row">
+                            <div class="form-group col-md-3">
+                                <label for="">Name</label>
+                                <input type="text" class="form-control" placeholder="">
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="">Date</label>
+                                <input type="text" class="form-control" placeholder="">
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="">Time</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" >
+                                    <div class="input-group-append">
+                                        <select class="custom-select">
+                                            <option selected>A.M/P.M</option>
+                                            <option>A.M</option>
+                                            <option>P.M</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="">Sign</label>
+                                <input type="text" class="form-control" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="">Blood group</label>
+                                <input type="text" class="form-control" placeholder="">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="">Rhesus</label>
+                                <input type="text" class="form-control" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <p>Units X-matched</p>
+                        </div>
+                        <div class="form-group">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th scope="col">Pack No.</th>
+                                    <th scope="col">Group</th>
+                                    <th scope="col">Expiry Date</th>
+                                    <th scope="col">Compatibility</th>
+                                    <th scope="col">Signature</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td><input type="number" class="form-control"></td>
+                                    <td><input type="text" class="form-control"></td>
+                                    <td><input type="text" class="form-control"></td>
+                                    <td><input type="text" class="form-control"></td>
+                                    <td><input type="text" class="form-control"></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="number" class="form-control"></td>
+                                    <td><input type="text" class="form-control"></td>
+                                    <td><input type="text" class="form-control"></td>
+                                    <td><input type="text" class="form-control"></td>
+                                    <td><input type="text" class="form-control"></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="number" class="form-control"></td>
+                                    <td><input type="text" class="form-control"></td>
+                                    <td><input type="text" class="form-control"></td>
+                                    <td><input type="text" class="form-control"></td>
+                                    <td><input type="text" class="form-control"></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="number" class="form-control"></td>
+                                    <td><input type="text" class="form-control"></td>
+                                    <td><input type="text" class="form-control"></td>
+                                    <td><input type="text" class="form-control"></td>
+                                    <td><input type="text" class="form-control"></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="number" class="form-control"></td>
+                                    <td><input type="text" class="form-control"></td>
+                                    <td><input type="text" class="form-control"></td>
+                                    <td><input type="text" class="form-control"></td>
+                                    <td><input type="text" class="form-control"></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <p>
+                                <b>It/They will be reserved for the patient until 9.a.m on</b>
+                                <input type="text" class="form-control">
+                            </p>
+                        </div>
+                    </div>
+                </form>
+
+                <hr>
+                <b><p>PART C-<i>to be completed by the doctor in charge of case</i></p></b>
+                <form>
+                    <div class="form-group">
+                        <label>Full details of transfusion reaction if any:</label>
+                        <textarea class="form-control"></textarea>
+                    </div>
+                    <p>Please return form to the laboratory with remains of unit of blood,post transfusion specimen of blood and a specimen of urine.</p>
+                </form>
+            </div>
+        </div>
+    </div>
+@endsection

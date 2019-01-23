@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+    <title>In-Patient/Out-Patient Continuation Sheet</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <h1 class="text-center">KENYATTA NATIONAL HOSPITAL</h1>
+        <h2 class="text-center">IN-PATIENT/OUT-PATIENT CONTINUATION SHEET</h2>
+
+        <form>
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label for="">IP/OP No</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="">Name</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="form-group col-md-1">
+                    <label for="">Age</label>
+                    <input type="number" class="form-control">
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="">Sex</label>
+                    <select class="custom-select">
+                        <option selected>Sex...</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="">Ward/Clinic</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="">Date</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <textarea class="form-control"></textarea>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

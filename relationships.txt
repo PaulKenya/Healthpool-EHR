@@ -1,0 +1,119 @@
+
+administration_patient_informations is the primary table. every other record belong to it.
+we will be using clinicalservices_casedeathsummaries for demonstration
+
+
+migration for clinicalservices_casedeathsummaries
+
+no changes to the administration_patient_informations table
+
+
+ Schema::create('clinicalservices_casedeathsummaries', function (Blueprint $table) {
+            $table->increments('id');
+
+            $table->string('clinic_ward');
+            $table->string('date_of_admission');
+            $table->string('date_of_discharge');
+            $table->string('consultants');
+            $table->string('diagnosis');
+
+            $table->string('complaints');
+            $table->string('physical_findings');
+            $table->string('investigations');
+            $table->string('management');
+            $table->string('outcome_discharge_instructions');
+            $table->string('name_of_clinic');
+            $table->string('firm');
+            $table->string('day');
+            $table->date('date');
+
+            //add to migrations
+            $table->integer('administration_patient_informations_id')->references('id')->on('administration_patient_informations');
+            $table->string('institution_id');
+            $table->string('user_id');
+            //the above three
+
+
+
+            $table->time('time');
+            $table->string('doctors_name');
+            $table->string('sign');
+            $table->string('department');
+
+            $table->timestamps();
+        });
+
+
+//administration_patient_information model
+//specify the foreign key field administration_patient_informations_id which is the name of the column in the child table
+
+public function clinicalservices_casedeathsummary(){
+    return $this->hasMany(clinicalservices_casedeathsummary::class, 'administration_patient_informations_id');
+}
+
+
+//clinicalservices_casedeathsummary model
+public function patient(){
+    return $this->belongsTo(administration_patient_information::class);
+}
+
+
+//routes
+//pass the variable patient_id
+Route::get('casedeath/{patient_id}', 'ClinicalServicesController@case_death')->name('case_death');
+Route::post('casedeath_post/{patient_id}', 'ClinicalServicesController@case_death_post')->name('case_death_post');
+
+//controller
+
+public function case_death($patient_id)
+{
+    //query casedeathsummary records related to the patient id passed via the url
+    //clinicalservices_casedeathsummary is the name of the function you declared in administration_patient_information model
+    $case_death_results=administration_patient_information::find($patient_id)->clinicalservices_casedeathsummary;
+    //get patient information also
+    $patient=administration_patient_information::find($patient_id);
+
+    //return view and pass the variables
+    return view('departments.clinical_services.inpatient.patient_file.case_death_summary',[
+        'case_death_results'=>$case_death_results,'patient_id'=>$patient_id, 'patient'=>$patient
+    ]);
+}
+public function case_death_post($patient_id)
+{
+    //migrate everything
+    //save records normally
+    $banking = new clinicalservices_casedeathsummary(Input::all());
+    $banking->save();
+    //redirect to route and pass the patient_id variable
+    return redirect(route('case_death',['patient_id' => $patient_id] ));
+}
+
+//edit your form action and pass the required parameters patient_id
+
+{{route('case_death_post', ['patient_id'=>$patient_id])}}
+
+//in single_patient.blade.php update the url and pass the patient_id
+<a class=" btn waves-effect waves-light btn-rounded btn-info m-2 pf-btn" href="{{ route('case_death',['patient_id'=>$patient_information->id])}}">Case Death</a>
+
+//in my case_death summary blade i can access variables like
+{{ $patient->name }}
+
+
+//add the following in your form
+<input name="administration_patient_informations_id" type="text" class="form-control d-none" value="{{$patient_id}}">
+<input name="institution_id" type="text" class="form-control" class="form-control d-none" value="{{ Auth::user()->institution->id }}">
+<input name="user_id" type="text" value="{{ Auth::user()->id }}" class="form-control d-none">
+
+
+patient_property_declaration_form
+nursing_notes
+continuation_form
+treatment_sheet
+pharmacy_withdrawal_form
+morning_and_evening_temp_chart
+four_hourly_temp_chart
+pulse_chart
+blood_pressure_chart
+diabetic_charts
+
+
